@@ -1,0 +1,333 @@
+body{
+    background-color: lightgray;
+}
+.calculatorContainer{
+    background: rgb(255, 255, 255);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    width: 90%;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: 1fr ;
+    gap: 30px;
+    border-radius: 10px;
+    padding: 50px;
+}
+.calculatorContainer .calculator  .heading{
+    text-align: center;
+    margin-bottom: 50px;
+}
+.calculatorContainer .calculator  .heading > h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #4CAF50;
+
+    display: inline-block;
+    position: relative;
+}
+
+.calculatorContainer .calculator .heading > h1::after{
+    content: "";
+    position: absolute;
+    top: 55px;
+    left: 0;
+    width: 220px;
+    height: 3px;
+    border-radius: 10px;
+    background-color: #4CAF50;
+
+}
+
+.calculatorContainer .calculator .heading > h1::before{
+    font-family: "Font Awesome 5 Free";
+    content: "\0024";
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: 900;
+    position: absolute;
+    color: #4CAF50;
+    top: 30px;
+    left: 97px;
+
+}
+.calculatorContainer .calculator .inputFields{
+    display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   grid-row-gap: 20px;
+   grid-column-gap: 30px;
+}
+
+
+.calculatorContainer .calculator .inputFields > div{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.calculatorContainer .calculator .inputFields > div input{
+    padding: 15px 10px;
+    border: 1px solid #4CAF50;
+    color: #99A3BA;
+    font-size: 18px;
+    border-radius: 6px;
+    background-color:  #fff;
+    outline: none;
+}
+
+.calculatorContainer .calculator .inputFields > div label{
+    font-weight: bold;
+    color: #666666;
+    font-size: 18px;
+}
+
+
+
+.calculatorContainer .calculator .inputFields > div input::placeholder{
+font-size: 16px;
+    color:  #c6cbd4;
+    letter-spacing: 1px;
+}
+
+
+.calculatorContainer .calculator .inputFields > div input:focus{
+    border:1px solid #99A3BA;
+}
+#chartPlaceholder {
+    /* Your styles here */
+    text-align: center;
+    padding: 50px;
+    color: grey;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    margin-top: 20px;
+}
+
+
+
+#result.list-group{
+    font-size: 20px;
+    font-weight: 500;
+    width: 520px;
+    letter-spacing: 1px;
+}
+
+
+#result.list-group .active{
+    background-color: #4CAF50;
+    border: 1px solid #4CAF50;
+}
+
+
+.resultContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+
+.inflationCotainer{
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.some{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 50px;
+    /* justify-items: center    ; */
+}
+
+
+
+.calculate{
+    background-color:#4CAF50 ;
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: all .5s ease-in-out;
+}
+
+.calculate:hover{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    opacity: 0.9;
+}
+
+.inflationBtn{
+    background-color:#4CAF50 ;
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.inflationBtn.active{
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+.inflationBtn:hover{
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+/* The switch - the box around the slider */
+
+.form-check-input{
+    cursor: pointer;
+}
+.form-check-input:checked {
+    background-color: #28a745!important; /* Change to your desired color */
+}
+
+.form-check-input:checked:focus {
+    border-color: #28a745!important; /* Optional: Change focus border color */
+    box-shadow: 0 0 0 0.25rem rgba(40, 167, 69, 0.5); /* Optional: Change focus shadow color */
+}
+
+.form-switch{
+    display: flex!important;
+    flex-direction: row-reverse!important;
+    gap: 65px;
+    align-items: center;
+    margin-left: -55px;
+    font-size: 23px;
+
+}
+
+
+
+@media screen and (max-width: 1210px) {
+
+    #result.list-group{
+        width: 422px;
+    }
+    .chartContainer{
+        width: 422px;
+    }
+  }
+
+
+
+
+@media screen and (max-width: 1000px) {
+
+    .resultContainer{
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 30px;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+    }
+    .some{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .calculatorContainer .calculator .inputFields{
+        display: grid;
+       grid-template-columns: 1fr 1fr;
+       grid-row-gap: 20px;
+       grid-column-gap: 30px;
+    }
+
+    .inflationCotainer{
+        gap: 30px;
+    }
+
+  }
+
+
+
+  @media screen and (max-width: 800px) {
+
+    .calculatorContainer .calculator .inputFields{
+       grid-template-columns:1fr;
+    }
+
+    .chartContainer #sipChart{
+        width: 100%!important;
+        height: 300px!important;
+    }
+
+
+  }
+
+
+
+
+  @media screen and (max-width: 580px) {
+    .calculator{
+        width: 100%;
+    }
+
+.resultContainer{
+    margin-top: 30px;
+    width: 100%!important;
+
+}
+    .chartContainer{
+        width: 380px;
+        font-size: 15px!important;
+    }
+
+    #result.list-group{
+        width: 380px;
+        font-size: 15px!important;
+    }
+
+.inputFields > div > label {
+    font-size: 15px!important;
+}
+.inputFields > div > input {
+    font-size: 15px!important;
+}
+
+  }
+
+
+
+  @media screen and (max-width: 526px) {
+
+    .chartContainer{
+        width: 320px;
+    }
+
+    #result.list-group{
+        width: 320px;
+    }
+
+
+  }
+
+
+  @media screen and (max-width: 456px) {
+
+    .chartContainer{
+        width: 280px;
+    }
+
+    #result.list-group{
+        width: 280px;
+    }
+
+
+  }
+
+  @media screen and (max-width: 426px) {
+
+    .chartContainer{
+        width: 230px;
+    }
+
+    #result.list-group{
+        width: 230px;
+    }
+
+
+  }

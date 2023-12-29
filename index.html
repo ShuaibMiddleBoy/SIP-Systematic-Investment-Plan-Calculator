@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SIP Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//use.fontawesome.com/releases/v5.7.2/css/all.css"
+    />
+  </head>
+  <body>
+    <div class="calculatorContainer">
+      <div class="calculator">
+        <!-- <div class="heading">
+          <h1>SIP Calculator</h1>
+        </div> -->
+        <div class="inputFields">
+          <div>
+            <label for="monthlyInvestment">Monthly Investment:</label>
+            <input
+              type="number"
+              id="monthlyInvestment"
+              placeholder="Enter amount"
+            />
+          </div>
+          <div>
+            <label for="duration">Duration (in years):</label>
+            <input type="number" id="duration" placeholder="Enter years" />
+          </div>
+          <div>
+            <label for="expectedReturn">Expected Return Rate (%):</label>
+            <input type="number" id="expectedReturn" placeholder="Enter rate" />
+          </div>
+        </div>
+      </div>
+
+      <div class="some">
+        <div class="inflationCotainer">
+          <div class="form-check form-switch">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="inflationToggle"
+              onchange="toggleInflation()"
+            />
+            <label class="form-check-label" for="inflationToggle"
+              >Include Inflation</label
+            >
+          </div>
+          <div id="inflationOptions" style="display: none">
+            <button
+              onclick="setInflationRate(2)"
+              class="inflationBtn"
+              role="button"
+            >
+              2%
+            </button>
+            <button
+              onclick="setInflationRate(4)"
+              class="inflationBtn"
+              role="button"
+            >
+              4%
+            </button>
+            <button
+              onclick="setInflationRate(6)"
+              class="inflationBtn"
+              role="button"
+            >
+              6%
+            </button>
+          </div>
+        </div>
+        <button onclick="calculateSIP()" class="calculate" role="button">
+          Calculate
+        </button>
+      </div>
+
+      <div class="resultContainer">
+        <div class="chartContainer">
+          <div
+            id="chartPlaceholder"
+            style="text-align: center; padding: 50px; color: grey"
+          >
+            Please enter values and click calculate to view the chart.
+          </div>
+          <canvas id="sipChart" style="display: none"></canvas>
+        </div>
+
+        <ul class="list-group" id="result">
+          <li class="list-group-item active py-4">Summary</li>
+          <li class="list-group-item py-4" id="expectedAmount">
+            Expected Amount: Rs. 0
+          </li>
+          <li class="list-group-item py-4" id="amountInvested">
+            Amount Invested: Rs. 0
+          </li>
+          <li class="list-group-item py-4" id="wealthGain">
+            Wealth Gain: Rs. 0
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
